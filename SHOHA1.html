@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Love Page</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #ff4d6d;
+            overflow: hidden;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px #ff99ac;
+        }
+        .love-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .love-bg span {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+           height: 20px;
+            background: pink;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: rise 5s linear infinite;
+        }
+        @keyframes rise {
+            from { transform: translateY(0); opacity: 0.6; }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="love-bg">
+        <script>
+            for(let i = 0; i < 50; i++) {
+                let heart = document.createElement('span');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                document.querySelector('.love-bg').appendChild(heart);
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h1>&#10084; SAMIN LOVE SHOHA &#10084;</h1>
+        <p class="heart">❤️💖💕💞💓</p>
+        <p>Forever and always, our love shines bright! 💑</p>
+   </div>
+</body>
+</html>
